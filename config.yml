@@ -1,0 +1,99 @@
+name: Social Icon
+slug: social-icon
+groups: content
+
+form:
+  general:
+    - name: socialicons
+      type: group-repeater
+      schema: 
+        - name: social_url
+          type: text
+          help: Input a title for your bar.
+          value: Social URL
+
+        - name: icon 
+          type: icon
+      value:
+        - title: Social URL
+
+    - name: layout
+      type: select
+      value: horizontal
+      options:
+        horizontal: Horizontal
+        vertical: Vertical
+
+    - name: width
+      value: 40px
+    - name: height
+      value: 40px
+
+    - name: alignment
+      type: select
+      value: left
+      label: Text Alignment
+      options:
+        left: Left
+        right: Right
+        center: Center
+
+    - name: border_enable
+      type: switch
+      label: Enable Border
+
+    - name: border_width
+      type: slider
+      value: 1
+      depends:
+        border_enable: true
+
+    - name: border_color
+      type: color
+      depends:
+        border_enable: true
+
+    - name: hover_border_color
+      type: color
+      depends:
+        border_enable: true
+
+    - name: border_radius
+      type: text
+      depends:
+        border_enable: true
+
+  style:
+
+    - name: font_size
+      value: 14px
+      label: Icon Font Size
+    - name: icon_padding
+      type: padding
+    - name: icon_color
+      type: color
+    - name: icon_bg
+      type: color
+    - name: icon_hover_color
+      type: color
+    - name: icon_hover_bg
+      type: color
+
+    - name: animation
+      type: select
+      value: fadeIn
+      label: Animation
+      options:
+        fadeInLeft: Left To Right
+        fadeInRight: Right To Left
+        fadeInUp: Bottom To Top
+        fadeInDown: Top To Bottom
+        fadeIn: Fade In
+        zoomIn: Zoom In
+        0: No Animation
+
+    - name: margin
+      type: margin
+    - name: padding
+      type: padding
+
